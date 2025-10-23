@@ -46,6 +46,18 @@ const config: HardhatUserConfig = {
       url: configVariable("SEPOLIA_RPC_URL"),
       accounts: [configVariable("SEPOLIA_PRIVATE_KEY")],
     },
+    taikoHoodi: {
+      type: "http",
+      chainId: 167013,
+      chainType: "op",
+      url: configVariable("TAIKO_HOODI_RPC_URL"),
+      accounts: [configVariable("TAIKO_HOODI_PRIVATE_KEY")],
+    },
+  },
+  verify: {
+    etherscan: {
+      apiKey: configVariable("ETHERSCAN_API_KEY"),
+    },
   },
 };
 

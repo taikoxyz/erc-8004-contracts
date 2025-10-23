@@ -24,6 +24,11 @@ Implementation of the ERC-8004 protocol for agent discovery and trust through re
 - **ReputationRegistry**: `0xc565edcba77e3abeade40bfd6cf6bf583b3293e0`
 - **ValidationRegistry**: `0x18df085d85c586e9241e0cd121ca422f571c2da6`
 
+#### Taiko Hoodi Testnet
+- **IdentityRegistry**: `0x`
+- **ReputationRegistry**: `0x`
+- **ValidationRegistry**: `0x`
+
 ## About
 
 This project implements **ERC-8004**, a protocol that enables discovering, choosing, and interacting with agents across organizational boundaries without pre-existing trust. It provides three core registries:
