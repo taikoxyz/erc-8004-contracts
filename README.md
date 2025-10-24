@@ -2,27 +2,9 @@
 
 Implementation of the ERC-8004 protocol for agent discovery and trust through reputation and validation.
 
-### Testnet Contract Addresses
+## 📍 Contract Deployments
 
-#### ETH Sepolia
-- **IdentityRegistry**: `0x8004a6090Cd10A7288092483047B097295Fb8847`
-- **ReputationRegistry**: `0x8004B8FD1A363aa02fDC07635C0c5F94f6Af5B7E`
-- **ValidationRegistry**: `0x8004CB39f29c09145F24Ad9dDe2A108C1A2cdfC5`
-
-#### Base Sepolia
-- **IdentityRegistry**: `0x8004AA63c570c570eBF15376c0dB199918BFe9Fb`
-- **ReputationRegistry**: `0x8004bd8daB57f14Ed299135749a5CB5c42d341BF`
-- **ValidationRegistry**: `0x8004C269D0A5647E51E121FeB226200ECE932d55`
-
-#### Linea Sepolia
-- **IdentityRegistry**: `0x8004aa7C931bCE1233973a0C6A667f73F66282e7`
-- **ReputationRegistry**: `0x8004bd8483b99310df121c46ED8858616b2Bba02`
-- **ValidationRegistry**: `0x8004c44d1EFdd699B2A26e781eF7F77c56A9a4EB`
-
-#### Hedera Testnet
-- **IdentityRegistry**: `0x4c74ebd72921d537159ed2053f46c12a7d8e5923`
-- **ReputationRegistry**: `0xc565edcba77e3abeade40bfd6cf6bf583b3293e0`
-- **ValidationRegistry**: `0x18df085d85c586e9241e0cd121ca422f571c2da6`
+For a complete list of deployed contract addresses across all networks, see **[DEPLOYMENTS.md](./DEPLOYMENTS.md)**.
 
 ## About
 
@@ -35,15 +17,22 @@ This project implements **ERC-8004**, a protocol that enables discovering, choos
 ## Project Structure
 
 ```
-contracts/
-├── IdentityRegistry.sol     - ERC-721 based agent registration
-├── ReputationRegistry.sol   - Feedback and reputation tracking
-└── ValidationRegistry.sol   - Validation request/response system
+src/
+├── IdentityRegistry.sol            - ERC-721 based agent registration
+├── IdentityRegistryUpgradeable.sol - Upgradeable identity registry
+├── ReputationRegistry.sol          - Feedback and reputation tracking
+├── ReputationRegistryUpgradeable.sol - Upgradeable reputation registry
+├── ValidationRegistry.sol          - Validation request/response system
+├── ValidationRegistryUpgradeable.sol - Upgradeable validation registry
+├── IIdentityRegistry.sol           - Identity registry interface
+├── ERC1967Proxy.sol                - Proxy for upgradeable contracts
+└── MockERC1271Wallet.sol           - Mock ERC-1271 wallet for testing
 
 test/
-└── ERC8004.ts              - Comprehensive test suite
+├── ERC8004.t.sol              - Comprehensive test suite
+└── ERC8004Upgradeable.t.sol   - Upgradeable contract tests
 
-ERC8004SPEC.md              - Full protocol specification
+ERC8004SPEC.md                 - Full protocol specification
 ```
 
 ## Key Features
@@ -71,19 +60,31 @@ ERC8004SPEC.md              - Full protocol specification
 ## Installation
 
 ```shell
-npm install
+forge install
+```
+
+## Building
+
+Build the contracts:
+```shell
+forge build
 ```
 
 ## Running Tests
 
 Run all tests:
 ```shell
-npm test
+forge test
 ```
 
-Or using Hardhat directly:
+Run tests with gas reporting:
 ```shell
-npx hardhat test
+forge test --gas-report
+```
+
+Run tests with verbosity:
+```shell
+forge test -vvv
 ```
 
 The test suite includes comprehensive coverage of:
@@ -98,10 +99,10 @@ The test suite includes comprehensive coverage of:
 ## Development
 
 This project uses:
-- **Hardhat 3** with native Node.js test runner (`node:test`)
-- **Viem** for Ethereum interactions
-- **TypeScript** for type safety
-- **OpenZeppelin Contracts** for ERC-721 implementation
+- **Foundry** for Ethereum development and testing
+- **Solidity 0.8.28** with optimizer enabled (200 runs) and via-IR
+- **OpenZeppelin Contracts** (v5.4.0) for ERC-721 implementation
+- **OpenZeppelin Contracts Upgradeable** (v5.4.0) for UUPS proxy pattern
 
 ## Protocol Overview
 
@@ -127,7 +128,7 @@ ERC-8004 supports three pluggable trust models:
 ## Resources
 
 - [ERC-8004 Full Specification](./ERC8004SPEC.md)
-- [Hardhat Documentation](https://hardhat.org/docs)
+- [Foundry Book](https://book.getfoundry.sh/)
 - [EIP-721: Non-Fungible Token Standard](https://eips.ethereum.org/EIPS/eip-721)
 
 ## License
