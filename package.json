@@ -11,8 +11,10 @@
     "deploy": "npx hardhat ignition deploy ./ignition/modules/ERC8004.ts --network localhost",
     "deploy:upgradeable": "npx hardhat run scripts/deploy-upgradeable.ts --network localhost",
     "deploy:upgradeable:sepolia": "npx hardhat run scripts/deploy-upgradeable.ts --network sepolia",
+    "deploy:upgradeable:taiko": "npx hardhat run scripts/deploy-upgradeable.ts --network taikoMainnet",
     "upgrade": "npx hardhat run scripts/upgrade-contracts.ts --network localhost",
-    "upgrade:sepolia": "npx hardhat run scripts/upgrade-contracts.ts --network sepolia"
+    "upgrade:sepolia": "npx hardhat run scripts/upgrade-contracts.ts --network sepolia",
+    "upgrade:taiko": "npx hardhat run scripts/upgrade-contracts.ts --network taikoMainnet"
   },
   "keywords": [],
   "author": "",
