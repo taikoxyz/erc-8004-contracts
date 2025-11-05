@@ -7,18 +7,24 @@
 # pnpm deploy output
 /bundle
 
-# Hardhat Build Artifacts
+# Hardhat Build Artifacts (legacy)
 /artifacts
 
-# Hardhat compilation (v2) support directory
+# Hardhat compilation (v2) support directory (legacy)
 /cache
 
-# Typechain output
+# Typechain output (legacy)
 /types
 
-# Hardhat coverage reports
+# Hardhat coverage reports (legacy)
 /coverage
 /coverage.json
+
+# Foundry
+/lib
+/out
+/cache_forge
+/broadcast
 
 # Environment variables
 .env
