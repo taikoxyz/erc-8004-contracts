@@ -17,6 +17,7 @@ const config: HardhatUserConfig = {
             runs: 200,
           },
           viaIR: true,
+          evmVersion: "shanghai",
         },
       },
       production: {
@@ -27,6 +28,7 @@ const config: HardhatUserConfig = {
             runs: 200,
           },
           viaIR: true,
+          evmVersion: "shanghai",
         },
       },
     },
@@ -46,6 +48,28 @@ const config: HardhatUserConfig = {
       url: configVariable("SEPOLIA_RPC_URL"),
       accounts: [configVariable("SEPOLIA_PRIVATE_KEY")],
     },
+    taikoMainnet: {
+      type: "http",
+      chainType: "op",
+      chainId: 167000,
+      url: "https://rpc.mainnet.taiko.xyz",
+      accounts: [configVariable("TAIKO_PRIVATE_KEY")],
+    },
+  },
+  etherscan: {
+    apiKey: {
+      taikoMainnet: "no-api-key-needed",
+    },
+    customChains: [
+      {
+        network: "taikoMainnet",
+        chainId: 167000,
+        urls: {
+          apiURL: "https://api.taikoscan.io/api",
+          browserURL: "https://taikoscan.io",
+        },
+      },
+    ],
   },
 };
 
