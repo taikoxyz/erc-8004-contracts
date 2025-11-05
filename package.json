@@ -1,36 +1,20 @@
 {
-  "name": "impl",
+  "name": "erc-8004-contracts",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "ERC-8004 Registry Contracts for Taiko",
   "scripts": {
-    "test": "hardhat test",
-    "test:upgradeable": "hardhat test test/ERC8004Upgradeable.ts",
-    "test:all": "hardhat test test/ERC8004.ts && hardhat test test/ERC8004Upgradeable.ts",
-    "local": "npx hardhat node",
-    "deploy": "npx hardhat ignition deploy ./ignition/modules/ERC8004.ts --network localhost",
-    "deploy:upgradeable": "npx hardhat run scripts/deploy-upgradeable.ts --network localhost",
-    "deploy:upgradeable:sepolia": "npx hardhat run scripts/deploy-upgradeable.ts --network sepolia",
-    "upgrade": "npx hardhat run scripts/upgrade-contracts.ts --network localhost",
-    "upgrade:sepolia": "npx hardhat run scripts/upgrade-contracts.ts --network sepolia"
+    "build": "forge build",
+    "test": "forge test",
+    "test:verbose": "forge test -vvv",
+    "clean": "forge clean",
+    "deploy": "forge script script/Deploy.s.sol:DeployScript --rpc-url $RPC_URL --broadcast --verify",
+    "deploy:upgradeable": "forge script script/DeployUpgradeable.s.sol:DeployUpgradeableScript --rpc-url $RPC_URL --broadcast --verify",
+    "deploy:taiko-testnet": "forge script script/DeployUpgradeable.s.sol:DeployUpgradeableScript --rpc-url taiko_testnet --broadcast --verify",
+    "deploy:taiko-mainnet": "forge script script/DeployUpgradeable.s.sol:DeployUpgradeableScript --rpc-url taiko_mainnet --broadcast --verify",
+    "format": "forge fmt",
+    "format:check": "forge fmt --check"
   },
-  "keywords": [],
+  "keywords": ["erc-8004", "identity", "reputation", "validation", "registry", "taiko", "foundry"],
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@nomicfoundation/hardhat-ethers": "^4.0.1",
-    "@nomicfoundation/hardhat-ignition": "^3.0.3",
-    "@nomicfoundation/hardhat-toolbox-viem": "^5.0.0",
-    "@openzeppelin/contracts-upgradeable": "^5.4.0",
-    "@types/node": "^22.18.8",
-    "ethers": "^6.15.0",
-    "forge-std": "github:foundry-rs/forge-std#v1.9.4",
-    "hardhat": "^3.0.6",
-    "typescript": "~5.8.0",
-    "viem": "^2.38.0"
-  },
-  "type": "module",
-  "dependencies": {
-    "@openzeppelin/contracts": "^5.4.0"
-  }
+  "license": "ISC"
 }

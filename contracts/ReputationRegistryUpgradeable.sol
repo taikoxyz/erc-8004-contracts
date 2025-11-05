@@ -7,12 +7,7 @@ import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 import "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
 import "@openzeppelin/contracts/utils/cryptography/MessageHashUtils.sol";
 import "@openzeppelin/contracts/interfaces/IERC1271.sol";
-
-interface IIdentityRegistry {
-    function ownerOf(uint256 tokenId) external view returns (address);
-    function isApprovedForAll(address owner, address operator) external view returns (bool);
-    function getApproved(uint256 tokenId) external view returns (address);
-}
+import "./interfaces/IIdentityRegistry.sol";
 
 contract ReputationRegistryUpgradeable is Initializable, OwnableUpgradeable, UUPSUpgradeable {
     using ECDSA for bytes32;
