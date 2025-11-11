@@ -25,9 +25,9 @@ Implementation of the ERC-8004 protocol for agent discovery and trust through re
 - **ValidationRegistry**: `0x18df085d85c586e9241e0cd121ca422f571c2da6`
 
 #### Taiko Hoodi Testnet
-- **IdentityRegistry**: `0x`
-- **ReputationRegistry**: `0x`
-- **ValidationRegistry**: `0x`
+- **IdentityRegistry**: `0x5806074a60dc9325256b23062c006637ab6d5382`
+- **ReputationRegistry**: `0x59f8f15002d586a0912225d3437da46ba5641f61`
+- **ValidationRegistry**: `0xb3956967a17630caa36168857e99cc6e87086bf8`
 
 ## About
 
