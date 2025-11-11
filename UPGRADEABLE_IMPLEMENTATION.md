@@ -55,8 +55,7 @@ scripts/
 
 ignition/
 └── modules/
-    ├── ERC8004.ts                          # Original deployment module
-    └── ERC8004Upgradeable.ts               # Upgradeable deployment module
+    └── ERC8004.ts                          # Original deployment module
 
 test/
 ├── ERC8004.ts                              # Original test suite (40 tests - all passing)
@@ -64,15 +63,6 @@ test/
 ```
 
 ## Deployment
-
-### Using Hardhat Ignition
-
-```bash
-# Deploy upgradeable contracts
-npx hardhat ignition deploy ./ignition/modules/ERC8004Upgradeable.ts --network <network>
-```
-
-### Using Deployment Script
 
 ```bash
 # Deploy using the script

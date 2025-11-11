@@ -17,6 +17,7 @@ const config: HardhatUserConfig = {
             runs: 200,
           },
           viaIR: true,
+          evmVersion: "shanghai",
         },
       },
       production: {
@@ -27,6 +28,7 @@ const config: HardhatUserConfig = {
             runs: 200,
           },
           viaIR: true,
+          evmVersion: "shanghai",
         },
       },
     },
@@ -45,6 +47,18 @@ const config: HardhatUserConfig = {
       chainType: "l1",
       url: configVariable("SEPOLIA_RPC_URL"),
       accounts: [configVariable("SEPOLIA_PRIVATE_KEY")],
+    },
+    taikohoodi: {
+      type: "http",
+      chainId: 167013,
+      chainType: "op",
+      url: configVariable("TAIKO_HOODI_RPC_URL"),
+      accounts: [configVariable("TAIKO_HOODI_PRIVATE_KEY")],
+    },
+  },
+  verify: {
+    etherscan: {
+      apiKey: configVariable("ETHERSCAN_API_KEY"),
     },
   },
 };
