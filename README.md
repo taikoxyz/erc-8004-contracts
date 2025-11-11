@@ -19,10 +19,20 @@ Implementation of the ERC-8004 protocol for agent discovery and trust through re
 - **ReputationRegistry**: `0x8004bd8483b99310df121c46ED8858616b2Bba02`
 - **ValidationRegistry**: `0x8004c44d1EFdd699B2A26e781eF7F77c56A9a4EB`
 
+#### Polygon Amoy
+- **IdentityRegistry**: `0x8004ad19E14B9e0654f73353e8a0B600D46C2898`
+- **ReputationRegistry**: `0x8004B12F4C2B42d00c46479e859C92e39044C930`
+- **ValidationRegistry**: `0x8004C11C213ff7BaD36489bcBDF947ba5eee289B`
+
 #### Hedera Testnet
 - **IdentityRegistry**: `0x4c74ebd72921d537159ed2053f46c12a7d8e5923`
 - **ReputationRegistry**: `0xc565edcba77e3abeade40bfd6cf6bf583b3293e0`
 - **ValidationRegistry**: `0x18df085d85c586e9241e0cd121ca422f571c2da6`
+
+#### HyperEVM Testnet
+- **IdentityRegistry**: `0x8004A9560C0edce880cbD24Ba19646470851C986`
+- **ReputationRegistry**: `0x8004b490779A65D3290a31fD96471122050dF671`
+- **ValidationRegistry**: `0x8004C86198fdB8d8169c0405D510EC86cc7B0551`
 
 #### Taiko Hoodi Testnet
 - **IdentityRegistry**: `0x5806074a60dc9325256b23062c006637ab6d5382`
